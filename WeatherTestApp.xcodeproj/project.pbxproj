@@ -27,6 +27,7 @@
 		CE710D5624DAF010007540AC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5524DAF010007540AC /* MainView.swift */; };
 		CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5724DAF67B007540AC /* TempLoader.swift */; };
 		CE710D5C24DAFA40007540AC /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5B24DAFA40007540AC /* TempView.swift */; };
+		CE710D5E24DAFC83007540AC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = CE710D5D24DAFC83007540AC /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		CE710D5524DAF010007540AC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE710D5724DAF67B007540AC /* TempLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempLoader.swift; sourceTree = "<group>"; };
 		CE710D5B24DAFA40007540AC /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		CE710D5D24DAFC83007540AC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4AA76024DACA5C00155AF3 /* .gitignore */,
+				CE710D5D24DAFC83007540AC /* readme.md */,
 				CE4AA74B24DAC90E00155AF3 /* WeatherTestApp */,
 				CE4AA74A24DAC90E00155AF3 /* Products */,
 				1335539A3DD739830B79DA5F /* Pods */,
@@ -288,6 +291,7 @@
 				CE4AA76124DACA5C00155AF3 /* .gitignore in Resources */,
 				CE4AA75924DAC91200155AF3 /* LaunchScreen.storyboard in Resources */,
 				CE4AA75624DAC91200155AF3 /* Assets.xcassets in Resources */,
+				CE710D5E24DAFC83007540AC /* readme.md in Resources */,
 				CE4AA75424DAC90E00155AF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
