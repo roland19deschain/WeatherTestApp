@@ -34,6 +34,7 @@
 		CEA9400E24DBD210001502D8 /* Router-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9400D24DBD210001502D8 /* Router-protocol.swift */; };
 		CEA9401124DBD344001502D8 /* MainProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401024DBD344001502D8 /* MainProcessor.swift */; };
 		CEA9401524DBD9A9001502D8 /* MainProcessor-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */; };
+		CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		CEA9400D24DBD210001502D8 /* Router-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router-protocol.swift"; sourceTree = "<group>"; };
 		CEA9401024DBD344001502D8 /* MainProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProcessor.swift; sourceTree = "<group>"; };
 		CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainProcessor-protocol.swift"; sourceTree = "<group>"; };
+		CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TempLoader-protocol.swift"; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,7 +250,8 @@
 		CEA9400A24DBD1C4001502D8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CEA9401324DBD99C001502D8 /* Main view */,
+				CEA9401324DBD99C001502D8 /* Main screen */,
+				CEA9401624DBDAB6001502D8 /* Temp screen */,
 				CEA9401224DBD996001502D8 /* Helpers */,
 			);
 			path = Protocols;
@@ -271,12 +274,20 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		CEA9401324DBD99C001502D8 /* Main view */ = {
+		CEA9401324DBD99C001502D8 /* Main screen */ = {
 			isa = PBXGroup;
 			children = (
 				CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */,
 			);
-			path = "Main view";
+			path = "Main screen";
+			sourceTree = "<group>";
+		};
+		CEA9401624DBDAB6001502D8 /* Temp screen */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */,
+			);
+			path = "Temp screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +391,7 @@
 			files = (
 				CE4AA77B24DAEDFD00155AF3 /* Description.swift in Sources */,
 				CE710D5624DAF010007540AC /* MainView.swift in Sources */,
+				CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */,
 				CE4AA76824DACB7C00155AF3 /* MainController.swift in Sources */,
 				CE4AA76E24DAD7EE00155AF3 /* APIService.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
