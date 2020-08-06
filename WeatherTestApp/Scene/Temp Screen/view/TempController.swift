@@ -29,7 +29,7 @@ final class TempController: UIViewController {
     // MARK: - Load data
     private func loadData() {
         let view = self.view as! TempView
-        tempLoader.loadTemp(city: Constants.urlString(with: navigationItem.title ?? ""),
+        tempLoader.loadTemp(city: navigationItem.title ?? "",
                             successHandle: { (response) in view.setLabelText(temp: response.temp, description: response.description) },
                             errorHandle: { (error) in
                                 Alert.error(self, message: error.localizedDescription)
