@@ -12,6 +12,7 @@ import RxCocoa
 
 final class MainController: UIViewController {
     private var tempController: TempController!
+    var main: Main!
 
     override func loadView() {
         super.loadView()
@@ -27,9 +28,7 @@ final class MainController: UIViewController {
     func configureUI() {
         let view = self.view as! MainView
         view.showWeather = { city in
-            self.tempController = TempController()
-            city.bind(to: self.tempController.navigationItem.rx.title).disposed(by: DisposeBag())
-            self.navigationController?.pushViewController(self.tempController, animated: true)
+            self.main.push { (navItem) in city.bind(to: navItem.rx.title).disposed(by: DisposeBag()) }
         }
     }
 
