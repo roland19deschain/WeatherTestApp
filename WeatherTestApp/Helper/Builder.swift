@@ -10,7 +10,7 @@ import UIKit
 
 final class Builder: BuilderProtocol {
     static func mainView(router: RouterProtocol) -> UIViewController {
-        let main = Main(router: router)
+        let main = MainProcessor(router: router)
         let mainController = MainController()
         mainController.main = main
         return mainController
