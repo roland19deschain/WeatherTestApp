@@ -29,21 +29,11 @@ final class MainView: UIView {
             .disposed(by: disposeBag)
         return field
     }()
-    
-    private lazy var showButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(Translate.showWeather, for: .normal)
-        button
-            .rx
-            .tap
-            .subscribe({ [weak self] _ in
-                guard let self = self else { return }
-                self.textField.resignFirstResponder()
-                self.showWeather?(Observable.just(self.textField.text))
-            })
-            .disposed(by: disposeBag)
-        return button
-    }()
+    private lazy var showButton = CustomButton(title: Translate.showWeather) { [weak self] in
+        guard let self = self else { return }
+        self.textField.resignFirstResponder()
+        self.showWeather?(Observable.just(self.textField.text))
+    }
     
     // MARK: - Init
     override init(frame: CGRect) {
