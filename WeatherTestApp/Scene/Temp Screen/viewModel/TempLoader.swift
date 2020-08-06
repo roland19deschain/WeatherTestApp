@@ -9,9 +9,7 @@
 import Foundation
 import RxSwift
 
-typealias WeatherResponse = (temp: String, description: String)
-
-final class TempLoader {
+final class TempLoader: TempLoaderProtocol {
     func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void) {
         APIService
             .shared
