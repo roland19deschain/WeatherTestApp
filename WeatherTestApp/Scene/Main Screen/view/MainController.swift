@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 final class MainController: UIViewController {
-    var main: Main!
+    var main: MainProcessorProtocol!
 
     override func loadView() {
         super.loadView()
