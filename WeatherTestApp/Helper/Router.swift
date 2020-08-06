@@ -13,10 +13,10 @@ final class Router: RouterProtocol {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        initiateController()
+        initialController()
     }
     
-    private func initiateController() {
+    private func initialController() {
         navigationController.viewControllers = [Builder.mainView(router: self)]
     }
     
