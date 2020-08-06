@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class Main {
+final class MainProcessor: MainProcessorProtocol {
     private let router: RouterProtocol
     
     init(router: RouterProtocol) { self.router = router }
