@@ -35,6 +35,7 @@
 		CEA9401124DBD344001502D8 /* MainProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401024DBD344001502D8 /* MainProcessor.swift */; };
 		CEA9401524DBD9A9001502D8 /* MainProcessor-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */; };
 		CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */; };
+		CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401924DBEB52001502D8 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		CEA9401024DBD344001502D8 /* MainProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProcessor.swift; sourceTree = "<group>"; };
 		CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainProcessor-protocol.swift"; sourceTree = "<group>"; };
 		CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TempLoader-protocol.swift"; sourceTree = "<group>"; };
+		CEA9401924DBEB52001502D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				CEA9400A24DBD1C4001502D8 /* Protocols */,
 				CE4AA76324DACAFF00155AF3 /* Extensions */,
 				CE4AA77324DAEC3600155AF3 /* Constants */,
+				CEA9401B24DBED1A001502D8 /* Custom views */,
 				CE4AA76224DACA8800155AF3 /* Supporting */,
 				CE4AA75A24DAC91200155AF3 /* Info.plist */,
 			);
@@ -290,6 +293,14 @@
 			path = "Temp screen";
 			sourceTree = "<group>";
 		};
+		CEA9401B24DBED1A001502D8 /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9401924DBEB52001502D8 /* CustomButton.swift */,
+			);
+			path = "Custom views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -394,6 +405,7 @@
 				CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */,
 				CE4AA76824DACB7C00155AF3 /* MainController.swift in Sources */,
 				CE4AA76E24DAD7EE00155AF3 /* APIService.swift in Sources */,
+				CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
 				CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */,

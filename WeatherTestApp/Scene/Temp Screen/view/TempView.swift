@@ -15,6 +15,8 @@ final class TempView: UIView {
         label.textAlignment = .center
         return label
     }()
+    private lazy var mapButton = CustomButton(title: Constants.map, action: {})
+    private lazy var googleMapButton = CustomButton(title: Constants.googleMap, action: {})
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -37,6 +39,16 @@ final class TempView: UIView {
         addSubview(tempLabel)
         tempLabel.centring(xAnchor: centerXAnchor, yAnchor: centerYAnchor)
         tempLabel.stretch(width: widthAnchor, multiplier: 0.9, height: widthAnchor, multiplier: 0.9)
+        
+        let buttonsStack = UIStackView(arrangedSubviews: [mapButton, googleMapButton])
+        buttonsStack.distribution = .fillEqually
+        addSubview(buttonsStack)
+        buttonsStack.anchor(top: tempLabel.bottomAnchor,
+                            leading: tempLabel.leadingAnchor,
+                            bottom: nil,
+                            trailing: tempLabel.trailingAnchor,
+                            padding: .init(top: 20, left: 0, bottom: 0, right: 0),
+                            size: .init(width: 0, height: 60))
     }
     
 }
