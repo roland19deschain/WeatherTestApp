@@ -11,4 +11,5 @@ import UIKit
 protocol RouterProtocol {
     init(navigationController: UINavigationController)
     func pushToTempController(_ configure: (UINavigationItem) -> Void)
+    func pushToMapController(type: Map)
 }
