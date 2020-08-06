@@ -20,7 +20,7 @@ final class MainView: UIView {
         let field = UITextField()
         field.delegate = self
         field.borderStyle = .roundedRect
-        field.placeholder = "Enter city"
+        field.placeholder = Translate.enterCity
         field
             .rx
             .text
@@ -32,7 +32,7 @@ final class MainView: UIView {
     
     private lazy var showButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Show weather", for: .normal)
+        button.setTitle(Translate.showWeather, for: .normal)
         button
             .rx
             .tap
