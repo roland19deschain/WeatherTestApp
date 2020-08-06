@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 final class MainController: UIViewController {
-    private var tempController: TempController!
     var main: Main!
 
     override func loadView() {
