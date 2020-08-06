@@ -21,7 +21,7 @@ final class Router: RouterProtocol {
     }
     
     func pushToTempController(_ configure: (UINavigationItem) -> Void) {
-        let temp = Builder.tempView()
+        let temp = Builder.tempView(router: self)
         configure(temp.navigationItem)
         navigationController.pushViewController(temp, animated: true)
     }

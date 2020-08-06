@@ -10,5 +10,5 @@ import UIKit
 
 protocol BuilderProtocol {
     static func mainView(router: RouterProtocol) -> UIViewController
-    static func tempView() -> UIViewController
+    static func tempView(router: RouterProtocol) -> UIViewController
 }

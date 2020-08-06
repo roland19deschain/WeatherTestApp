@@ -16,8 +16,8 @@ final class Builder: BuilderProtocol {
         return mainController
     }
     
-    static func tempView() -> UIViewController {
-        let tempLoader = TempLoader()
+    static func tempView(router: RouterProtocol) -> UIViewController {
+        let tempLoader = TempLoader(router: router)
         let tempController = TempController()
         tempController.tempLoader = tempLoader
         return tempController

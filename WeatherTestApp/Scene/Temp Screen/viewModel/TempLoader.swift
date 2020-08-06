@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 
 final class TempLoader: TempLoaderProtocol {
+    private let router: RouterProtocol
+    
+    init(router: RouterProtocol) { self.router = router }
+    
     func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void) {
         APIService
             .shared
