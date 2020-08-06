@@ -8,15 +8,20 @@
 
 import UIKit
 
+enum Map { case apple, google }
+
 final class TempView: UIView {
+    var mapAction: ((Map) -> Void)?
+    
+    // MARK: - Views
     private let tempLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
     }()
-    private lazy var mapButton = CustomButton(title: Constants.map, action: {})
-    private lazy var googleMapButton = CustomButton(title: Constants.googleMap, action: {})
+    private lazy var mapButton = CustomButton(title: Constants.map, action: { self.mapAction?(.apple) })
+    private lazy var googleMapButton = CustomButton(title: Constants.googleMap, action: { self.mapAction?(.google) })
     
     // MARK: - Init
     override init(frame: CGRect) {
