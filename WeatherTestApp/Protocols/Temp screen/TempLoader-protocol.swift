@@ -13,4 +13,5 @@ typealias WeatherResponse = (temp: String, description: String)
 protocol TempLoaderProtocol {
     init(router: RouterProtocol)
     func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void)
+    func pushToMap(type: Map)
 }

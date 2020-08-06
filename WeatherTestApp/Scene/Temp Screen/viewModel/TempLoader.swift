@@ -33,4 +33,8 @@ final class TempLoader: TempLoaderProtocol {
         }
     }
     
+    func pushToMap(type: Map) {
+        router.pushToMapController(type: type)
+    }
+    
 }
