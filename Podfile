@@ -5,4 +5,5 @@ target 'WeatherTestApp' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RxAlamofire'
+  pod 'GoogleMaps'
 end
