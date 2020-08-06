@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 final class TempController: UIViewController {
-    var tempLoader: TempLoader!
+    var tempLoader: TempLoaderProtocol!
     
     // MARK: - Lifecycle
     override func loadView() {
