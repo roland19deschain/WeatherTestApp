@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,11 @@
 		CEA9401524DBD9A9001502D8 /* MainProcessor-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */; };
 		CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */; };
 		CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401924DBEB52001502D8 /* CustomButton.swift */; };
+		CEA9402024DBF7D8001502D8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9401F24DBF7D8001502D8 /* MapView.swift */; };
+		CEA9402224DBF806001502D8 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402124DBF806001502D8 /* MapController.swift */; };
+		CEA9402424DC02BF001502D8 /* AppleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402324DC02BF001502D8 /* AppleMapView.swift */; };
+		CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402524DC0359001502D8 /* GoogleMapView.swift */; };
+		CEA9402924DC2EF5001502D8 /* MapState-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +76,11 @@
 		CEA9401424DBD9A9001502D8 /* MainProcessor-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainProcessor-protocol.swift"; sourceTree = "<group>"; };
 		CEA9401724DBDACA001502D8 /* TempLoader-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TempLoader-protocol.swift"; sourceTree = "<group>"; };
 		CEA9401924DBEB52001502D8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CEA9401F24DBF7D8001502D8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CEA9402124DBF806001502D8 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		CEA9402324DC02BF001502D8 /* AppleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapView.swift; sourceTree = "<group>"; };
+		CEA9402524DC0359001502D8 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapState-protocol.swift"; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +175,7 @@
 			children = (
 				CE4AA77F24DAEE8600155AF3 /* Main Screen */,
 				CE4AA78024DAEE9500155AF3 /* Temp Screen */,
+				CEA9401E24DBF661001502D8 /* Map Screen */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 				CEA9401324DBD99C001502D8 /* Main screen */,
 				CEA9401624DBDAB6001502D8 /* Temp screen */,
 				CEA9401224DBD996001502D8 /* Helpers */,
+				CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -301,6 +313,25 @@
 			path = "Custom views";
 			sourceTree = "<group>";
 		};
+		CEA9401E24DBF661001502D8 /* Map Screen */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9402124DBF806001502D8 /* MapController.swift */,
+				CEA9401F24DBF7D8001502D8 /* MapView.swift */,
+				CEA9402724DC03E7001502D8 /* Map states */,
+			);
+			path = "Map Screen";
+			sourceTree = "<group>";
+		};
+		CEA9402724DC03E7001502D8 /* Map states */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9402324DC02BF001502D8 /* AppleMapView.swift */,
+				CEA9402524DC0359001502D8 /* GoogleMapView.swift */,
+			);
+			path = "Map states";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +343,7 @@
 				CE4AA74524DAC90E00155AF3 /* Sources */,
 				CE4AA74624DAC90E00155AF3 /* Frameworks */,
 				CE4AA74724DAC90E00155AF3 /* Resources */,
+				50F24B2F93C16322AAB8C64C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,6 +403,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50F24B2F93C16322AAB8C64C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A4A0E4363708BF242E3B3491 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA9402424DC02BF001502D8 /* AppleMapView.swift in Sources */,
 				CE4AA77B24DAEDFD00155AF3 /* Description.swift in Sources */,
 				CE710D5624DAF010007540AC /* MainView.swift in Sources */,
 				CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */,
@@ -408,10 +458,14 @@
 				CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
+				CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */,
 				CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */,
 				CEA9400E24DBD210001502D8 /* Router-protocol.swift in Sources */,
 				CEA9401524DBD9A9001502D8 /* MainProcessor-protocol.swift in Sources */,
+				CEA9402024DBF7D8001502D8 /* MapView.swift in Sources */,
 				CE710D6224DAFF94007540AC /* Builder.swift in Sources */,
+				CEA9402224DBF806001502D8 /* MapController.swift in Sources */,
+				CEA9402924DC2EF5001502D8 /* MapState-protocol.swift in Sources */,
 				CE4AA74F24DAC90E00155AF3 /* SceneDelegate.swift in Sources */,
 				CEA9401124DBD344001502D8 /* MainProcessor.swift in Sources */,
 				CE710D6024DAFEF3007540AC /* Router.swift in Sources */,
