@@ -13,4 +13,6 @@ struct Constants {
     static func urlString(with city: String) -> String { "https://samples.openweathermap.org/data/2.5/weather?q=\(city)&appid=" + apiKey }
     
     static let kelvin = 273.5
+    static let map = "MapKit"
+    static let googleMap = "GoogleMaps"
 }
