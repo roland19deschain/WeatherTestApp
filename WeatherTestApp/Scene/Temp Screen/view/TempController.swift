@@ -22,6 +22,7 @@ final class TempController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        configureView()
     }
 
     
@@ -36,4 +37,9 @@ final class TempController: UIViewController {
                             })
     }
 
+    private func configureView() {
+        let view = self.view as! TempView
+        view.mapAction = { (map) in self.tempLoader.pushToMap(type: map) }
+    }
+    
 }
