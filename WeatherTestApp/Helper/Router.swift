@@ -26,8 +26,8 @@ final class Router: RouterProtocol {
         navigationController.pushViewController(temp, animated: true)
     }
     
-    func pushToMapController(type: Map) {
-        let map = Builder.mapView(type: type)
+    func pushToMapController(mapData: MapData) {
+        let map = Builder.mapView(mapData: mapData)
         navigationController.pushViewController(map, animated: true)
     }
     

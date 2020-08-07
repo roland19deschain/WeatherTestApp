@@ -23,9 +23,9 @@ final class Builder: BuilderProtocol {
         return tempController
     }
     
-    static func mapView(type: Map) -> UIViewController {
+    static func mapView(mapData: MapData) -> UIViewController {
         let map = MapController()
-        map.type = type
+        map.mapData = mapData
         return map
     }
     
