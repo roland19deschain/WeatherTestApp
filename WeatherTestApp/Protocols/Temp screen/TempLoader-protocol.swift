@@ -8,10 +8,11 @@
 
 import Foundation
 
-typealias WeatherResponse = (temp: String, description: String)
+typealias WeatherResponse = (temp: String, description: String, coordinates: Coordinates)
+typealias Coordinates = (lat: Double, lon: Double)
 
 protocol TempLoaderProtocol {
     init(router: RouterProtocol)
     func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void)
-    func pushToMap(type: Map)
+    func pushToMap(mapData: MapData)
 }
