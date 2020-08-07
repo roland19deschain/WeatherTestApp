@@ -17,7 +17,8 @@ final class TempLoader: TempLoaderProtocol {
     func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void) {
         APIService
             .shared
-            .rxResponse(by: Constants.urlString(with: city)) { (response: Observable<Weather>?, error) in
+            .rxResponse(by: Constants.urlString,
+                        parameters: ["q": city, "APPID": Constants.apiKey]) { (response: Observable<Weather>?, error) in
                 if let error = error {
                     errorHandle(error)
                     return
