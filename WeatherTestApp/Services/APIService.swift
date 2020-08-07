@@ -32,7 +32,7 @@ final class APIService {
                     completion(nil, error)
                 default: break
                 }
-                completion(decodable(.get, urlString), nil)
+                completion(decodable(.get, components.url!.absoluteString), nil)
             })
     }
     
