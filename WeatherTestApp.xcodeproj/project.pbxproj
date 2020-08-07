@@ -41,6 +41,8 @@
 		CEA9402424DC02BF001502D8 /* AppleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402324DC02BF001502D8 /* AppleMapView.swift */; };
 		CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402524DC0359001502D8 /* GoogleMapView.swift */; };
 		CEA9402924DC2EF5001502D8 /* MapState-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */; };
+		CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */; };
+		CEEEF9DB24DD78AA00DB1EC8 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		CEA9402324DC02BF001502D8 /* AppleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapView.swift; sourceTree = "<group>"; };
 		CEA9402524DC0359001502D8 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapState-protocol.swift"; sourceTree = "<group>"; };
+		CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
+		CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +217,8 @@
 				CE4AA77824DAED9500155AF3 /* Weather.swift */,
 				CE4AA77A24DAEDFD00155AF3 /* Description.swift */,
 				CE4AA77C24DAEE1600155AF3 /* Temp.swift */,
+				CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */,
+				CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
+				CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */,
 				CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */,
 				CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */,
 				CEA9400E24DBD210001502D8 /* Router-protocol.swift in Sources */,
@@ -476,6 +483,7 @@
 				CE710D5C24DAFA40007540AC /* TempView.swift in Sources */,
 				CE4AA76C24DACFE100155AF3 /* TempController.swift in Sources */,
 				CE4AA77524DAEC4900155AF3 /* Constants.swift in Sources */,
+				CEEEF9DB24DD78AA00DB1EC8 /* MapData.swift in Sources */,
 				CEA9400C24DBD1DB001502D8 /* Builder-protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

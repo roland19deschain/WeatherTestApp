@@ -29,13 +29,17 @@ final class TempLoader: TempLoaderProtocol {
                     .subscribe(onNext: { response in
                         let temp = "\(Int(response.main.temp - Constants.kelvin))"
                         let description = response.weather.first?.main ?? ""
-                        successHandle((temp, description))
+                        let coordinates = response.coord
+                        successHandle((temp,
+                                       description,
+                                       (coordinates.lat, coordinates.lon)
+                                       ))
                     })
         }
     }
     
-    func pushToMap(type: Map) {
-        router.pushToMapController(type: type)
+    func pushToMap(mapData: MapData) {
+        router.pushToMapController(mapData: mapData)
     }
     
 }
