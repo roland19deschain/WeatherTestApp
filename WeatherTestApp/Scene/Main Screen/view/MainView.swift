@@ -32,7 +32,7 @@ final class MainView: UIView {
     private lazy var showButton = CustomButton(title: Translate.showWeather) { [weak self] in
         guard let self = self else { return }
         self.textField.resignFirstResponder()
-        self.showWeather?(Observable.just(self.textField.text?.replacingOccurrences(of: " ", with: "+")))
+        self.showWeather?(Observable.just(self.textField.text))
     }
     
     // MARK: - Init
