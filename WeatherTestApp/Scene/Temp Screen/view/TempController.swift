@@ -22,7 +22,6 @@ final class TempController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        configureView()
     }
 
     
@@ -30,16 +29,16 @@ final class TempController: UIViewController {
     private func loadData() {
         let view = self.view as! TempView
         tempLoader.loadTemp(city: navigationItem.title ?? "",
-                            successHandle: { (response) in view.setLabelText(temp: response.temp, description: response.description) },
+                            successHandle: { (response) in
+                                view.setLabelText(temp: response.temp, description: response.description)
+                                view.mapAction = { (map) in self.tempLoader.pushToMap(mapData: .init(type: map,
+                                                                                                     lat: response.coordinates.lat,
+                                                                                                     lon: response.coordinates.lon)) }
+                            },
                             errorHandle: { (error) in
                                 Alert.error(self, message: error.localizedDescription)
                                 self.navigationController?.popViewController(animated: true)
                             })
     }
 
-    private func configureView() {
-        let view = self.view as! TempView
-        view.mapAction = { (map) in self.tempLoader.pushToMap(type: map) }
-    }
-    
 }
