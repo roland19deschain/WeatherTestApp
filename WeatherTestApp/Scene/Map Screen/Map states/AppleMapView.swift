@@ -12,7 +12,9 @@ import MapKit
 final class AppleMapView: UIView, MapStateProtocol {
     private lazy var appleView: MKMapView! = {
         let map = MKMapView()
+        map.delegate = self
         map.showsUserLocation = true
+        map.register(CustomMark.self, forAnnotationViewWithReuseIdentifier: CustomMark.identifier)
         return map
     }()
     
@@ -20,6 +22,11 @@ final class AppleMapView: UIView, MapStateProtocol {
     init(lat: Double, lon: Double) {
         super.init(frame: .zero)
         setPosition(lat: lat, lon: lon)
+        let source = CustomMark(coordinate: .init(latitude: lat, longitude: lon))
+        let destination = CustomMark(coordinate: .init(latitude: lat + 1, longitude: lon + 1))
+        appleView.addAnnotation(source)
+        appleView.addAnnotation(destination)
+        addDirection(from: source, to: destination)
     }
     
     required init?(coder: NSCoder) {
@@ -34,6 +41,19 @@ final class AppleMapView: UIView, MapStateProtocol {
         appleView.setRegion(region, animated: true)
     }
     
+    func addDirection(from source: MKAnnotation, to destination: MKAnnotation) {
+        let request = MKDirections.Request()
+        request.source = source.mapItem
+        request.destination = destination.mapItem
+        request.transportType = .any
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            guard let response = response else { return }
+            response.routes.forEach({ self.appleView.addOverlay($0.polyline) })
+        }
+    }
+    
     // MARK: - Layout
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -41,4 +61,14 @@ final class AppleMapView: UIView, MapStateProtocol {
         appleView.fillSuperview(padding: .zero)
     }
     
+}
+
+// MARK: - Delegate
+extension AppleMapView: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay)
+        render.lineWidth = 10
+        render.strokeColor = .green
+        return render
+    }
 }
