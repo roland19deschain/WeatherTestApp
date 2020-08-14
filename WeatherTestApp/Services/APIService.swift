@@ -18,22 +18,17 @@ final class APIService {
         guard let urlString = urlString, var components = URLComponents(string: urlString) else { return }
         components.queryItems = parameters.map({ URLQueryItem(name: $0, value: "\($1)") })
         _ = response(.get, components.url!.absoluteString)
-            .subscribe({ response in
-                if let error = response.error {
-                    completion(nil, error)
-                    return
-                }
-                switch response.element?.statusCode ?? 0 {
-                case 400...499:
-                    let error = NSError(domain: "Client error", code: 400, userInfo: nil)
-                    completion(nil, error)
-                case 500...:
-                    let error = NSError(domain: "Server error", code: 500, userInfo: nil)
+            .subscribe(onNext: { response in
+                
+                switch response.statusCode {
+                case 300...:
+                    let error = NSError(domain: response.headers.description, code: response.statusCode, userInfo: nil)
                     completion(nil, error)
                 default: break
                 }
-                completion(decodable(.get, components.url!.absoluteString), nil)
-            })
+                
+            }, onError: { error in completion(nil, error) },
+               onCompleted: { completion(decodable(.get, components.url!.absoluteString), nil) })
     }
     
 }

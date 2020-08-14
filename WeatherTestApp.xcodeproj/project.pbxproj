@@ -23,8 +23,9 @@
 		CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AA77824DAED9500155AF3 /* Weather.swift */; };
 		CE4AA77B24DAEDFD00155AF3 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AA77A24DAEDFD00155AF3 /* Description.swift */; };
 		CE4AA77D24DAEE1600155AF3 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AA77C24DAEE1600155AF3 /* Temp.swift */; };
+		CE66EFA124E6933300B5B8B0 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66EFA024E6933300B5B8B0 /* WeatherResponse.swift */; };
 		CE710D5624DAF010007540AC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5524DAF010007540AC /* MainView.swift */; };
-		CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5724DAF67B007540AC /* TempLoader.swift */; };
+		CE710D5824DAF67B007540AC /* TempHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5724DAF67B007540AC /* TempHandler.swift */; };
 		CE710D5C24DAFA40007540AC /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5B24DAFA40007540AC /* TempView.swift */; };
 		CE710D5E24DAFC83007540AC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = CE710D5D24DAFC83007540AC /* readme.md */; };
 		CE710D6024DAFEF3007540AC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5F24DAFEF3007540AC /* Router.swift */; };
@@ -67,8 +68,9 @@
 		CE4AA77824DAED9500155AF3 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		CE4AA77A24DAEDFD00155AF3 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		CE4AA77C24DAEE1600155AF3 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		CE66EFA024E6933300B5B8B0 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		CE710D5524DAF010007540AC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		CE710D5724DAF67B007540AC /* TempLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempLoader.swift; sourceTree = "<group>"; };
+		CE710D5724DAF67B007540AC /* TempHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempHandler.swift; sourceTree = "<group>"; };
 		CE710D5B24DAFA40007540AC /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		CE710D5D24DAFC83007540AC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		CE710D5F24DAFEF3007540AC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				CE4AA77C24DAEE1600155AF3 /* Temp.swift */,
 				CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */,
 				CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */,
+				CE66EFA024E6933300B5B8B0 /* WeatherResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,7 +270,7 @@
 		CE710D5A24DAF7C5007540AC /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CE710D5724DAF67B007540AC /* TempLoader.swift */,
+				CE710D5724DAF67B007540AC /* TempHandler.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -471,7 +474,7 @@
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
 				CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */,
 				CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */,
-				CE710D5824DAF67B007540AC /* TempLoader.swift in Sources */,
+				CE710D5824DAF67B007540AC /* TempHandler.swift in Sources */,
 				CEA9400E24DBD210001502D8 /* Router-protocol.swift in Sources */,
 				CE9C79C024E5805800AD09BF /* CustomMark.swift in Sources */,
 				CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */,
@@ -485,6 +488,7 @@
 				CEA9401124DBD344001502D8 /* MainProcessor.swift in Sources */,
 				CE710D6024DAFEF3007540AC /* Router.swift in Sources */,
 				CE4AA77724DAEC5000155AF3 /* Translate.swift in Sources */,
+				CE66EFA124E6933300B5B8B0 /* WeatherResponse.swift in Sources */,
 				CE4AA76524DACB4C00155AF3 /* UIView+Layout.swift in Sources */,
 				CE4AA77224DAEC1000155AF3 /* Alert.swift in Sources */,
 				CE4AA77D24DAEE1600155AF3 /* Temp.swift in Sources */,
