@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMaps
+import RxSwift
 
 final class GoogleMapView: UIView, MapStateProtocol {
     private lazy var googleMapView: GMSMapView = {
@@ -38,13 +39,26 @@ final class GoogleMapView: UIView, MapStateProtocol {
     }
     
     func addDirections(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
-        let path = GMSMutablePath()
-        path.add(source)
-        path.add(destination)
-        let polyline = GMSPolyline(path: path)
-        polyline.strokeWidth = 10
-        polyline.strokeColor = .red
-        polyline.map = googleMapView
+        APIService.shared.rxResponse(by: Constants.directionsApi,
+                                     parameters: [
+                                        "origin": "\(source.latitude),\(source.longitude)",
+                                        "destination": "\(source.latitude),\(source.longitude)",
+                                        "key": Constants.googleApiKey
+                                        ])
+        { (observable: Observable<Direction>?, error) in
+            observable?
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: { direction in
+                    direction.routes.forEach({
+                        let path = GMSPath(fromEncodedPath: $0.overviewPolyline.points)
+                        let polyline = GMSPolyline(path: path)
+                        polyline.strokeWidth = 10
+                        polyline.strokeColor = .red
+                        polyline.map = self.googleMapView
+                    })
+                }, onError: nil, onCompleted: nil, onDisposed: nil)
+                .disposed(by: DisposeBag())
+        }
     }
     
     // MARK: - Layout
@@ -59,4 +73,22 @@ final class GoogleMapView: UIView, MapStateProtocol {
 // MARK: - Delegate
 extension GoogleMapView: GMSMapViewDelegate {
     
+}
+
+struct Direction: Codable {
+    let routes: [Route]
+}
+
+// MARK: - Route
+struct Route: Codable {
+    let overviewPolyline: OverviewPolyline
+
+    enum CodingKeys: String, CodingKey {
+        case overviewPolyline = "overview_polyline"
+    }
+}
+
+// MARK: - OverviewPolyline
+struct OverviewPolyline: Codable {
+    let points: String
 }
