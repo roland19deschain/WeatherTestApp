@@ -1,5 +1,5 @@
 //
-//  TempLoader-protocol.swift
+//  TempHandler-protocol.swift
 //  WeatherTestApp
 //
 //  Created by User on 8/6/20.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-typealias WeatherResponse = (temp: String, description: String, coordinates: Coordinates)
-typealias Coordinates = (lat: Double, lon: Double)
-
-protocol TempLoaderProtocol {
-    init(router: RouterProtocol)
-    func loadTemp(city: String, successHandle: @escaping (WeatherResponse) -> Void, errorHandle: @escaping (Error) -> Void)
+protocol TempHandlerProtocol {
+    var title: String { get }
+    var temp: String { get }
+    var description: String { get }
+    var lat: Double { get }
+    var lon: Double { get }
+    init(response: WeatherResponse, router: RouterProtocol)
     func pushToMap(mapData: MapData)
 }
