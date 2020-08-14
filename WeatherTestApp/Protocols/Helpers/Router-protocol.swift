@@ -10,6 +10,6 @@ import UIKit
 
 protocol RouterProtocol {
     init(navigationController: UINavigationController)
-    func pushToTempController(_ configure: (UINavigationItem) -> Void)
+    func pushToTempController(response: WeatherResponse)
     func pushToMapController(mapData: MapData)
 }

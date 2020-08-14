@@ -20,9 +20,8 @@ final class Router: RouterProtocol {
         navigationController.viewControllers = [Builder.mainView(router: self)]
     }
     
-    func pushToTempController(_ configure: (UINavigationItem) -> Void) {
-        let temp = Builder.tempView(router: self)
-        configure(temp.navigationItem)
+    func pushToTempController(response: WeatherResponse) {
+        let temp = Builder.tempView(response: response, router: self)
         navigationController.pushViewController(temp, animated: true)
     }
     
