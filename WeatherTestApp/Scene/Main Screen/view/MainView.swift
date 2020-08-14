@@ -13,7 +13,7 @@ import RxCocoa
 final class MainView: UIView {
     // MARK: - Properties
     private let disposeBag = DisposeBag()
-    var showWeather: ((Observable<String?>) -> Void)?
+    var showWeather: ((String) -> Void)?
     
     // MARK: - Views
     private lazy var textField: UITextField = {
@@ -32,7 +32,7 @@ final class MainView: UIView {
     private lazy var showButton = CustomButton(title: Translate.showWeather) { [weak self] in
         guard let self = self else { return }
         self.textField.resignFirstResponder()
-        self.showWeather?(Observable.just(self.textField.text))
+        self.showWeather?(self.textField.text ?? "")
     }
     
     // MARK: - Init
