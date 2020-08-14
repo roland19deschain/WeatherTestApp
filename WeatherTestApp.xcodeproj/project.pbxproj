@@ -10,7 +10,6 @@
 		24F5866E217B8C761017463B /* libPods-WeatherTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C70D09FBFA602786B484D5 /* libPods-WeatherTestApp.a */; };
 		CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AA74C24DAC90E00155AF3 /* AppDelegate.swift */; };
 		CE4AA74F24DAC90E00155AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AA74E24DAC90E00155AF3 /* SceneDelegate.swift */; };
-		CE4AA75424DAC90E00155AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4AA75224DAC90E00155AF3 /* Main.storyboard */; };
 		CE4AA75624DAC91200155AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4AA75524DAC91200155AF3 /* Assets.xcassets */; };
 		CE4AA75924DAC91200155AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4AA75724DAC91200155AF3 /* LaunchScreen.storyboard */; };
 		CE4AA76124DACA5C00155AF3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE4AA76024DACA5C00155AF3 /* .gitignore */; };
@@ -54,7 +53,6 @@
 		CE4AA74924DAC90E00155AF3 /* WeatherTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4AA74C24DAC90E00155AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4AA74E24DAC90E00155AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE4AA75324DAC90E00155AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4AA75524DAC91200155AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4AA75824DAC91200155AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE4AA75A24DAC91200155AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			children = (
 				CE4AA74C24DAC90E00155AF3 /* AppDelegate.swift */,
 				CE4AA74E24DAC90E00155AF3 /* SceneDelegate.swift */,
-				CE4AA75224DAC90E00155AF3 /* Main.storyboard */,
 				CE4AA75524DAC91200155AF3 /* Assets.xcassets */,
 				CE4AA75724DAC91200155AF3 /* LaunchScreen.storyboard */,
 			);
@@ -411,7 +408,6 @@
 				CE4AA75924DAC91200155AF3 /* LaunchScreen.storyboard in Resources */,
 				CE4AA75624DAC91200155AF3 /* Assets.xcassets in Resources */,
 				CE710D5E24DAFC83007540AC /* readme.md in Resources */,
-				CE4AA75424DAC90E00155AF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,14 +499,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE4AA75224DAC90E00155AF3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE4AA75324DAC90E00155AF3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE4AA75724DAC91200155AF3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

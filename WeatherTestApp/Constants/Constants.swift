@@ -14,4 +14,6 @@ struct Constants {
     static let kelvin = 273.5
     static let map = "MapKit"
     static let googleMap = "GoogleMaps"
+    static let directionsApi = "https://maps.googleapis.com/maps/api/directions/json"
+    static let googleApiKey = "AIzaSyAMM3fmL-mJe6nLSX3Pq8dWyJZTJWgzZIk"
 }
