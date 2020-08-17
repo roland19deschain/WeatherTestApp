@@ -11,6 +11,10 @@ import GoogleMaps
 import RxSwift
 
 final class GoogleMapView: UIView, MapStateProtocol {
+    private let source: CLLocationCoordinate2D
+    private var destination: GMSMarker?
+    
+    // MARK: - View
     private lazy var googleMapView: GMSMapView = {
         let map = GMSMapView()
         map.delegate = self
@@ -19,23 +23,23 @@ final class GoogleMapView: UIView, MapStateProtocol {
     
     // MARK: - Init
     init(lat: Double, lon: Double) {
+        source = .init(latitude: lat, longitude: lon)
         super.init(frame: .zero)
-        addMark(lat: lat, lon: lon)
-        addMark(lat: lat + 1, lon: lon + 1)
-        addDirections(from: .init(latitude: lat, longitude: lon),
-                      to: .init(latitude: lat + 1, longitude: lon + 1))
+        setPosition(lat: lat, lon: lon)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     // MARK: - Configure
     func setPosition(lat: Double, lon: Double) {
-        googleMapView.camera = GMSCameraPosition.camera(withTarget: .init(latitude: lat, longitude: lon), zoom: 15)
+        let coordinate = CLLocationCoordinate2D.init(latitude: lat, longitude: lon)
+        googleMapView.camera = GMSCameraPosition.camera(withTarget: coordinate, zoom: 15)
+        addMark(coordinate: coordinate)
     }
     
-    func addMark(lat: Double, lon: Double) {
-        let mark = GMSMarker(position: .init(latitude: lat, longitude: lon))
-        mark.map = googleMapView
+    func addMark(coordinate: CLLocationCoordinate2D) {
+        destination = GMSMarker(position: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
+        destination?.map = googleMapView
     }
     
     func addDirections(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
@@ -60,7 +64,7 @@ final class GoogleMapView: UIView, MapStateProtocol {
                 .disposed(by: DisposeBag())
         }
     }
-    
+
     // MARK: - Layout
     override func layoutSubviews() {
         super.layoutSubviews()
