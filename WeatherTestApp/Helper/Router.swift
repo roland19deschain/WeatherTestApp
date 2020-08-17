@@ -18,11 +18,13 @@ final class Router: RouterProtocol {
     
     private func initialController() {
         navigationController.viewControllers = [Builder.mainView(router: self)]
+        navigationController.isNavigationBarHidden = true
     }
     
     func pushToTempController(response: WeatherResponse) {
         let temp = Builder.tempView(response: response, router: self)
         navigationController.pushViewController(temp, animated: true)
+        UIView.animate(withDuration: 0.5) { self.navigationController.isNavigationBarHidden = false }
     }
     
     func pushToMapController(mapData: MapData) {
