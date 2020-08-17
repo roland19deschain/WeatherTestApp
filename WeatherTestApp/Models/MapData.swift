@@ -9,6 +9,7 @@
 import Foundation
 
 struct MapData {
+    let city: String
     let type: Map
     let lat: Double
     let lon: Double
