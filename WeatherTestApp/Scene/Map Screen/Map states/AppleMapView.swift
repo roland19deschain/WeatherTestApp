@@ -26,6 +26,7 @@ final class AppleMapView: UIView, MapStateProtocol {
     init(lat: Double, lon: Double) {
         source = CustomMark(coordinate: .init(latitude: lat, longitude: lon))
         super.init(frame: .zero)
+        configureGesture()
         setPosition(lat: lat, lon: lon)
     }
     
@@ -50,6 +51,28 @@ final class AppleMapView: UIView, MapStateProtocol {
         directions.calculate { (response, error) in
             guard let response = response else { return }
             response.routes.forEach({ self.appleView.addOverlay($0.polyline) })
+        }
+    }
+    
+    // MARK: - Tap gesture
+    private func configureGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapHandle(_:)))
+        appleView.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func tapHandle(_ recognizer: UITapGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            if appleView.annotations.count > 1 {
+                appleView.removeAnnotation(destination)
+                appleView.removeOverlays(appleView.overlays)
+            }
+            let point = recognizer.location(in: appleView)
+            let coordinate = appleView.convert(point, toCoordinateFrom: appleView)
+            destination = CustomMark(coordinate: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            appleView.addAnnotation(destination)
+            addDirection(from: source, to: destination)
+        default: break
         }
     }
     
