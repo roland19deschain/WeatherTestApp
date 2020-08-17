@@ -74,21 +74,3 @@ final class GoogleMapView: UIView, MapStateProtocol {
 extension GoogleMapView: GMSMapViewDelegate {
     
 }
-
-struct Direction: Codable {
-    let routes: [Route]
-}
-
-// MARK: - Route
-struct Route: Codable {
-    let overviewPolyline: OverviewPolyline
-
-    enum CodingKeys: String, CodingKey {
-        case overviewPolyline = "overview_polyline"
-    }
-}
-
-// MARK: - OverviewPolyline
-struct OverviewPolyline: Codable {
-    let points: String
-}
