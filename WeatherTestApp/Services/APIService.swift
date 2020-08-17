@@ -20,12 +20,17 @@ final class APIService {
         _ = response(.get, components.url!.absoluteString)
             .subscribe(onNext: { response in
                 
+                var error: NSError?
                 switch response.statusCode {
-                case 300...:
-                    let error = NSError(domain: response.headers.description, code: response.statusCode, userInfo: nil)
-                    completion(nil, error)
+                case 300...399:
+                    error = NSError(domain: "Redirects occurred", code: response.statusCode, userInfo: nil)
+                case 400...499:
+                    error = NSError(domain: "Check whether the input is correct", code: response.statusCode, userInfo: nil)
+                case 500...:
+                    error = NSError(domain: "Server error", code: response.statusCode, userInfo: nil)
                 default: break
                 }
+                completion(nil, error)
                 
             }, onError: { error in completion(nil, error) },
                onCompleted: { completion(decodable(.get, components.url!.absoluteString), nil) })
