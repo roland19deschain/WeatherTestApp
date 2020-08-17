@@ -11,7 +11,10 @@ import UIKit
 final class MapController: UIViewController {
     private var mapView: UIView!
     var mapData: MapData! {
-        didSet { mapView = MapView(type: mapData.type, lat: mapData.lat, lon: mapData.lon) }
+        didSet {
+            navigationItem.title = mapData.city
+            mapView = MapView(type: mapData.type, lat: mapData.lat, lon: mapData.lon)
+        }
     }
     
     override func viewDidLoad() {
