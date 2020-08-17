@@ -76,5 +76,10 @@ final class GoogleMapView: UIView, MapStateProtocol {
 
 // MARK: - Delegate
 extension GoogleMapView: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        destination?.map = nil
+        addMark(coordinate: coordinate)
+        addDirections(from: source, to: coordinate)
+    }
     
 }
