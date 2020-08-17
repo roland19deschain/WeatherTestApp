@@ -27,7 +27,6 @@ final class AppleMapView: UIView, MapStateProtocol {
         source = CustomMark(coordinate: .init(latitude: lat, longitude: lon))
         super.init(frame: .zero)
         configureGesture()
-        setPosition(lat: lat, lon: lon)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -50,7 +49,10 @@ final class AppleMapView: UIView, MapStateProtocol {
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
             guard let response = response else { return }
-            response.routes.forEach({ self.appleView.addOverlay($0.polyline) })
+            response.routes.forEach({
+                self.appleView.addOverlay($0.polyline)
+                
+            })
         }
     }
     

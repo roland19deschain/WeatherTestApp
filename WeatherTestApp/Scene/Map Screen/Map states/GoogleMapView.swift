@@ -27,7 +27,6 @@ final class GoogleMapView: UIView, MapStateProtocol {
     init(lat: Double, lon: Double) {
         source = .init(latitude: lat, longitude: lon)
         super.init(frame: .zero)
-        setPosition(lat: lat, lon: lon)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
