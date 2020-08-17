@@ -14,6 +14,7 @@ final class GoogleMapView: UIView, MapStateProtocol {
     private let source: CLLocationCoordinate2D
     private var destination: GMSMarker?
     private var direction: GMSPolyline?
+    private var line: GMSPolyline?
     
     // MARK: - View
     private lazy var googleMapView: GMSMapView = {
@@ -70,8 +71,10 @@ final class GoogleMapView: UIView, MapStateProtocol {
         let path = GMSMutablePath()
         path.add(source)
         path.add(destination)
-        direction = GMSPolyline(path: path)
-        direction?.map = googleMapView
+        line = GMSPolyline(path: path)
+        line?.strokeColor = .blue
+        line?.strokeWidth = 10
+        line?.map = googleMapView
     }
 
     // MARK: - Layout
@@ -88,6 +91,7 @@ extension GoogleMapView: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         destination?.map = nil
         direction?.map = nil
+        line?.map = nil
         addMark(coordinate: coordinate)
         addDirections(from: source, to: coordinate)
         addLine(from: source, to: coordinate)
