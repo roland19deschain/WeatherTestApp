@@ -10,6 +10,10 @@ import Foundation
 import MapKit
 
 final class AppleMapView: UIView, MapStateProtocol {
+    private let source: CustomMark
+    private var destination: CustomMark!
+    
+    // MARK: - View
     private lazy var appleView: MKMapView! = {
         let map = MKMapView()
         map.delegate = self
@@ -20,18 +24,12 @@ final class AppleMapView: UIView, MapStateProtocol {
     
     // MARK: - Init
     init(lat: Double, lon: Double) {
+        source = CustomMark(coordinate: .init(latitude: lat, longitude: lon))
         super.init(frame: .zero)
         setPosition(lat: lat, lon: lon)
-        let source = CustomMark(coordinate: .init(latitude: lat, longitude: lon))
-        let destination = CustomMark(coordinate: .init(latitude: lat + 1, longitude: lon + 1))
-        appleView.addAnnotation(source)
-        appleView.addAnnotation(destination)
-        addDirection(from: source, to: destination)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: - Configure
     func setPosition(lat: Double, lon: Double) {
@@ -39,6 +37,7 @@ final class AppleMapView: UIView, MapStateProtocol {
                                         latitudinalMeters: 1000,
                                         longitudinalMeters: 1000)
         appleView.setRegion(region, animated: true)
+        appleView.addAnnotation(source)
     }
     
     func addDirection(from source: MKAnnotation, to destination: MKAnnotation) {
