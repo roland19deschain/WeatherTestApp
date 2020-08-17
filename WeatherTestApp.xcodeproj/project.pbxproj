@@ -48,6 +48,7 @@
 		CECDE3E224EA7A6900C9A73A /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDE3E124EA7A6900C9A73A /* Direction.swift */; };
 		CECDE3E424EA7A7A00C9A73A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDE3E324EA7A7A00C9A73A /* Route.swift */; };
 		CECDE3E624EA7A8900C9A73A /* OverviewPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDE3E524EA7A8900C9A73A /* OverviewPolyline.swift */; };
+		CECDE3E824EAC87700C9A73A /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDE3E724EAC87700C9A73A /* DistanceView.swift */; };
 		CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */; };
 		CEEEF9DB24DD78AA00DB1EC8 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		CECDE3E124EA7A6900C9A73A /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		CECDE3E324EA7A7A00C9A73A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		CECDE3E524EA7A8900C9A73A /* OverviewPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPolyline.swift; sourceTree = "<group>"; };
+		CECDE3E724EAC87700C9A73A /* DistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
 		CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
 		CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		E2D1F4DA845BADBB34D45125 /* Pods-WeatherTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTestApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherTestApp/Pods-WeatherTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				CEA9402124DBF806001502D8 /* MapController.swift */,
 				CEA9401F24DBF7D8001502D8 /* MapView.swift */,
+				CECDE3E724EAC87700C9A73A /* DistanceView.swift */,
 				CE9C79BF24E5805800AD09BF /* CustomMark.swift */,
 				CEA9402724DC03E7001502D8 /* Map states */,
 			);
@@ -511,6 +514,7 @@
 				CE710D6024DAFEF3007540AC /* Router.swift in Sources */,
 				CE4AA77724DAEC5000155AF3 /* Translate.swift in Sources */,
 				CE66EFA124E6933300B5B8B0 /* WeatherResponse.swift in Sources */,
+				CECDE3E824EAC87700C9A73A /* DistanceView.swift in Sources */,
 				CE4AA76524DACB4C00155AF3 /* UIView+Layout.swift in Sources */,
 				CE4AA77224DAEC1000155AF3 /* Alert.swift in Sources */,
 				CE4AA77D24DAEE1600155AF3 /* Temp.swift in Sources */,

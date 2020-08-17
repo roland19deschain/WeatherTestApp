@@ -11,6 +11,7 @@ import MapKit
 
 final class MapView: UIView {
     private var mapView: MapStateProtocol!
+    private let distanceView = DistanceView()
     
     // MARK: - Init
     init(type: Map, lat: Double, lon: Double) {
@@ -29,6 +30,14 @@ final class MapView: UIView {
         super.layoutSubviews()
         addSubview(mapView)
         mapView.fillSuperview(padding: .zero)
+        
+        addSubview(distanceView)
+        distanceView.anchor(top: nil,
+                            leading: leadingAnchor,
+                            bottom: bottomAnchor,
+                            trailing: trailingAnchor,
+                            padding: .init(top: 0, left: 30, bottom: 30, right: 30))
+        distanceView.stretch(width: nil, multiplier: 0, height: heightAnchor, multiplier: 0.2)
     }
     
     // MARK: - Deinit
