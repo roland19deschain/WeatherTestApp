@@ -13,6 +13,7 @@ import RxSwift
 final class GoogleMapView: UIView, MapStateProtocol {
     private let source: CLLocationCoordinate2D
     private var destination: GMSMarker?
+    private var direction: GMSPolyline?
     
     // MARK: - View
     private lazy var googleMapView: GMSMapView = {
@@ -46,7 +47,7 @@ final class GoogleMapView: UIView, MapStateProtocol {
         APIService.shared.rxResponse(by: Constants.directionsApi,
                                      parameters: [
                                         "origin": "\(source.latitude),\(source.longitude)",
-                                        "destination": "\(source.latitude),\(source.longitude)",
+                                        "destination": "\(destination.latitude),\(destination.longitude)",
                                         "key": Constants.googleApiKey
                                         ])
         { (observable: Observable<Direction>?, error) in
@@ -55,14 +56,22 @@ final class GoogleMapView: UIView, MapStateProtocol {
                 .subscribe(onNext: { direction in
                     direction.routes.forEach({
                         let path = GMSPath(fromEncodedPath: $0.overviewPolyline.points)
-                        let polyline = GMSPolyline(path: path)
-                        polyline.strokeWidth = 10
-                        polyline.strokeColor = .red
-                        polyline.map = self.googleMapView
+                        self.direction = GMSPolyline(path: path)
+                        self.direction?.strokeWidth = 10
+                        self.direction?.strokeColor = .red
+                        self.direction?.map = self.googleMapView
                     })
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
                 .disposed(by: DisposeBag())
         }
+    }
+    
+    func addLine(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+        let path = GMSMutablePath()
+        path.add(source)
+        path.add(destination)
+        direction = GMSPolyline(path: path)
+        direction?.map = googleMapView
     }
 
     // MARK: - Layout
@@ -78,8 +87,10 @@ final class GoogleMapView: UIView, MapStateProtocol {
 extension GoogleMapView: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         destination?.map = nil
+        direction?.map = nil
         addMark(coordinate: coordinate)
         addDirections(from: source, to: coordinate)
+        addLine(from: source, to: coordinate)
     }
     
 }
