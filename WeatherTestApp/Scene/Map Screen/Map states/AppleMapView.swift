@@ -54,6 +54,15 @@ final class AppleMapView: UIView, MapStateProtocol {
         }
     }
     
+    func addLine(from source: MKAnnotation, to destination: MKAnnotation) {
+        let points = [
+            MKMapPoint(source.coordinate),
+            MKMapPoint(destination.coordinate)
+        ]
+        let geodesic = MKGeodesicPolyline(points: points, count: points.count)
+        appleView.addOverlay(geodesic)
+    }
+    
     // MARK: - Tap gesture
     private func configureGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapHandle(_:)))
@@ -72,6 +81,7 @@ final class AppleMapView: UIView, MapStateProtocol {
             destination = CustomMark(coordinate: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
             appleView.addAnnotation(destination)
             addDirection(from: source, to: destination)
+            addLine(from: source, to: destination)
         default: break
         }
     }
@@ -90,7 +100,7 @@ extension AppleMapView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let render = MKPolylineRenderer(overlay: overlay)
         render.lineWidth = 10
-        render.strokeColor = .green
+        render.strokeColor = (overlay is MKGeodesicPolyline) ? .red : .green
         return render
     }
 }
