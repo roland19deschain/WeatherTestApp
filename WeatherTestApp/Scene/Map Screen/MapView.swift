@@ -21,6 +21,7 @@ final class MapView: UIView {
         case .google: mapView = GoogleMapView(lat: lat, lon: lon)
         }
         mapView.setPosition(lat: lat, lon: lon)
+        mapView.setDistance = { route, line in self.distanceView.distanceData = (route, line) }
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
