@@ -96,6 +96,11 @@ extension GoogleMapView: GMSMapViewDelegate {
         addMark(coordinate: coordinate)
         addDirections(from: source, to: coordinate)
         addLine(from: source, to: coordinate)
+        
+        let sourceItem = CLLocation(latitude: source.latitude, longitude: source.longitude)
+        let destinationItem = CLLocation(latitude: coordinate.longitude, longitude: coordinate.longitude)
+        let lineDistance = Double(round(sourceItem.distance(from: destinationItem)) / 1000)
+        setDistance?(0, lineDistance)
     }
     
 }
