@@ -15,8 +15,8 @@ final class DistanceView: UIView {
         get { return (0, 0) }
         
         set {
-            routeDistanceLabel.text = "\(newValue.route)"
-            lineDistanceLabel.text = "\(newValue.line)"
+            routeDistanceLabel.text = "\(newValue.route) km"
+            lineDistanceLabel.text = "\(newValue.line) km"
             UIView.transition(with: self,
                               duration: 0.5,
                               options: .transitionFlipFromBottom,
