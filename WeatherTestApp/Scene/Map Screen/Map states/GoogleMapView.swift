@@ -28,6 +28,8 @@ final class GoogleMapView: UIView, MapStateProtocol {
     init(lat: Double, lon: Double) {
         source = .init(latitude: lat, longitude: lon)
         super.init(frame: .zero)
+        let sourceMark = GMSMarker(position: source)
+        sourceMark.map = googleMapView
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
