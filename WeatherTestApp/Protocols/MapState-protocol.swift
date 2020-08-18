@@ -9,6 +9,7 @@
 import UIKit
 
 protocol MapStateProtocol: UIView {
+    var setDistance: ((Double, Double) -> Void)? { get set }
     init(lat: Double, lon: Double)
     func setPosition(lat: Double, lon: Double)
 }
