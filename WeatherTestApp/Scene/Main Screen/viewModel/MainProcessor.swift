@@ -14,7 +14,7 @@ final class MainProcessor: MainProcessorProtocol {
     
     init(router: RouterProtocol) { self.router = router }
     
-    func loadTemp(city: String, errorHandle: @escaping (Error) -> Void) {
+    func loadTemp(city: String, errorHandle: @escaping (APIService.NetworkError) -> Void) {
         APIService
             .shared
             .rxResponse(by: Constants.urlString,
