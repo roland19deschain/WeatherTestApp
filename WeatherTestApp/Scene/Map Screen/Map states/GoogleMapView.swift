@@ -15,6 +15,7 @@ final class GoogleMapView: UIView, MapStateProtocol {
     private var destination: GMSMarker?
     private var direction: GMSPolyline?
     private var line: GMSPolyline?
+    var setDistance: ((Double, Double) -> Void)?
     
     // MARK: - View
     private lazy var googleMapView: GMSMapView = {
@@ -60,6 +61,7 @@ final class GoogleMapView: UIView, MapStateProtocol {
                         self.direction?.strokeWidth = 10
                         self.direction?.strokeColor = .red
                         self.direction?.map = self.googleMapView
+                        // added to model Route struct Legs with line distance
                     })
                 }, onError: nil, onCompleted: nil, onDisposed: nil)
                 .disposed(by: DisposeBag())

@@ -12,6 +12,7 @@ import MapKit
 final class AppleMapView: UIView, MapStateProtocol {
     private let source: CustomMark
     private var destination: CustomMark!
+    var setDistance: ((Double, Double) -> Void)?
     
     // MARK: - View
     private lazy var appleView: MKMapView! = {
@@ -46,12 +47,16 @@ final class AppleMapView: UIView, MapStateProtocol {
         request.destination = destination.mapItem
         request.transportType = .any
         
+        let sourceItem = CLLocation(latitude: source.coordinate.latitude, longitude: source.coordinate.longitude)
+        let destinationItem = CLLocation(latitude: destination.coordinate.latitude, longitude: destination.coordinate.longitude)
+        let distance = Double(round(sourceItem.distance(from: destinationItem)) / 1000)
+        
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
             guard let response = response else { return }
             response.routes.forEach({
                 self.appleView.addOverlay($0.polyline)
-                
+                self.setDistance?($0.distance / 1000, distance)
             })
         }
     }
