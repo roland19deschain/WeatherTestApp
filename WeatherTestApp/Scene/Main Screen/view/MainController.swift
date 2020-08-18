@@ -28,7 +28,7 @@ final class MainController: UIViewController {
     private func configureUI() {
         let view = self.view as! MainView
         view.showWeather = { city in
-            self.main.loadTemp(city: city, errorHandle: { error in Alert.error(self, message: error.localizedDescription) })
+            self.main.loadTemp(city: city, errorHandle: { error in Alert.error(self, message: error.rawValue) })
         }
     }
 
