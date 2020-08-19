@@ -49,9 +49,11 @@ final class DistanceView: UIView {
         subviews
             .map({ $0 as! UILabel })
             .forEach({
-                let height = ((bounds.height - 40) / 2) * 0.6
-                $0.font = UIFont.boldSystemFont(ofSize: height)
                 $0.textAlignment = isLeft ? .left : .center
+                
+                $0.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+                $0.adjustsFontSizeToFitWidth = true
+                $0.adjustsFontForContentSizeCategory = true
             })
     }
     
@@ -71,6 +73,7 @@ final class DistanceView: UIView {
         let stack = UIStackView(arrangedSubviews: [leftStack, rightStack])
         stack.distribution = .fill
         stack.axis = .horizontal
+        stack.spacing = 10
         addSubview(stack)
         stack.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
         
