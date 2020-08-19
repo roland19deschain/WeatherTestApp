@@ -9,24 +9,24 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkyFloatingLabelTextField
+import SwiftValidator
 
 final class MainView: UIView {
     // MARK: - Properties
     private let disposeBag = DisposeBag()
+    private let validator = Validator()
     var showWeather: ((String) -> Void)?
     
     // MARK: - Views
-    private lazy var textField: UITextField = {
-        let field = UITextField()
+    private lazy var textField: SkyFloatingLabelTextField = {
+        let field = SkyFloatingLabelTextField()
         field.delegate = self
-        field.borderStyle = .roundedRect
-        field.placeholder = Translate.enterCity
-        field
-            .rx
-            .text
-            .orEmpty
-            .subscribe({ self.showButton.isHidden = $0.element == "" ? true : false })
-            .disposed(by: disposeBag)
+        field.placeholder = "City"
+        field.title = Translate.enterCity
+        field.selectedTitleColor = .systemBlue
+        field.lineColor = .systemBlue
+        field.addTarget(self, action: #selector(textFieldHandleError(_:)), for: .editingChanged)
         return field
     }()
     private lazy var showButton = CustomButton(title: Translate.showWeather) { [weak self] in
@@ -39,9 +39,17 @@ final class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        showButton.isHidden = true
+        validator.registerField(textField, errorLabel: showButton.titleLabel, rules: [RequiredRule(), LineCountRule(), ThreeSpaceRule()])
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    // MARK: - Configure
+    @objc private func textFieldHandleError(_ textField: SkyFloatingLabelTextField) {
+        showButton.isHidden = false
+        validator.validate(self)
+    }
     
     // MARK: - Layout
     override func layoutSubviews() {
@@ -72,3 +80,21 @@ extension MainView: UITextFieldDelegate {
         textField.resignFirstResponder()
     }
 }
+
+// MARK: - Validator delegate
+extension MainView: ValidationDelegate {
+    func validationSuccessful() {
+        showButton.setTitle(Translate.showWeather, for: .normal)
+        showButton.setTitleColor(.systemBlue, for: .normal)
+        showButton.isEnabled = true
+    }
+    
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        for (_, error) in errors {
+            showButton.setTitle(error.errorMessage, for: .normal)
+            showButton.setTitleColor(.red, for: .normal)
+            showButton.isEnabled = false
+        }
+    }
+}
+
