@@ -6,4 +6,5 @@ target 'WeatherTestApp' do
   pod 'RxCocoa', '~> 5'
   pod 'RxAlamofire'
   pod 'GoogleMaps'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 end
