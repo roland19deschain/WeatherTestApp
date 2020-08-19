@@ -9,8 +9,11 @@
 import Foundation
 
 struct Constants {
-    private static let apiKey = "439d4b804bc8187953eb36d2a8c26a02"
-    static func urlString(with city: String) -> String { "https://samples.openweathermap.org/data/2.5/weather?q=\(city)&appid=" + apiKey }
-    
+    static let apiKey = "526c5e3e34b1c0cc4046b54adebbac0a"
+    static let urlString = "https://api.openweathermap.org/data/2.5/weather"
     static let kelvin = 273.5
+    static let map = "MapKit"
+    static let googleMap = "GoogleMaps"
+    static let directionsApi = "https://maps.googleapis.com/maps/api/directions/json"
+    static let googleApiKey = "AIzaSyAMM3fmL-mJe6nLSX3Pq8dWyJZTJWgzZIk"
 }

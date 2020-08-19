@@ -10,5 +10,5 @@ import UIKit
 
 protocol MainProcessorProtocol {
     init(router: RouterProtocol)
-    func push(_ configure: (UINavigationItem) -> Void)
+    func loadTemp(city: String, errorHandle: @escaping (APIService.NetworkError) -> Void) 
 }

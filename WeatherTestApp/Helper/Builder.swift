@@ -16,11 +16,17 @@ final class Builder: BuilderProtocol {
         return mainController
     }
     
-    static func tempView() -> UIViewController {
-        let tempLoader = TempLoader()
+    static func tempView(response: WeatherResponse, router: RouterProtocol) -> UIViewController {
+        let tempLoader = TempHandler(response: response, router: router)
         let tempController = TempController()
-        tempController.tempLoader = tempLoader
+        tempController.tempHandler = tempLoader
         return tempController
+    }
+    
+    static func mapView(mapData: MapData) -> UIViewController {
+        let map = MapController()
+        map.mapData = mapData
+        return map
     }
     
 }

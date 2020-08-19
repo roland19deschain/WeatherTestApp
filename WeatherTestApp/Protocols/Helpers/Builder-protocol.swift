@@ -10,5 +10,6 @@ import UIKit
 
 protocol BuilderProtocol {
     static func mainView(router: RouterProtocol) -> UIViewController
-    static func tempView() -> UIViewController
+    static func tempView(response: WeatherResponse, router: RouterProtocol) -> UIViewController
+    static func mapView(mapData: MapData) -> UIViewController
 }

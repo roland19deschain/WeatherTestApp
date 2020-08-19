@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 final class TempController: UIViewController {
-    var tempLoader: TempLoaderProtocol!
+    var tempHandler: TempHandlerProtocol!
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -21,19 +21,23 @@ final class TempController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        handleData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
 
-    
     // MARK: - Load data
-    private func loadData() {
+    private func handleData() {
         let view = self.view as! TempView
-        tempLoader.loadTemp(city: Constants.urlString(with: navigationItem.title ?? ""),
-                            successHandle: { (response) in view.setLabelText(temp: response.temp, description: response.description) },
-                            errorHandle: { (error) in
-                                Alert.error(self, message: error.localizedDescription)
-                                self.navigationController?.popViewController(animated: true)
-                            })
+        navigationItem.title = tempHandler.title
+        view.setLabelText(temp: tempHandler.temp, description: tempHandler.description)
+        view.mapAction = { (map) in self.tempHandler.pushToMap(mapData: .init(city: self.tempHandler.title,
+                                                                              type: map,
+                                                                             lat: self.tempHandler.lat,
+                                                                             lon: self.tempHandler.lon)) }
     }
 
 }

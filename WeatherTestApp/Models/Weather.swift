@@ -9,6 +9,7 @@
 import Foundation
 
 struct Weather: Codable {
+    let coord: Coord
     let weather: [Description]
     let main: Temp
 }
