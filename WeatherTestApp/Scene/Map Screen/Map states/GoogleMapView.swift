@@ -100,8 +100,8 @@ extension GoogleMapView: GMSMapViewDelegate {
         addLine(from: source, to: coordinate)
         
         let sourceItem = CLLocation(latitude: source.latitude, longitude: source.longitude)
-        let destinationItem = CLLocation(latitude: coordinate.longitude, longitude: coordinate.longitude)
-        let lineDistance = Double(round(sourceItem.distance(from: destinationItem) / 1000) / 1000)
+        let destinationItem = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let lineDistance = Double(round(sourceItem.distance(from: destinationItem)) / 1000)
         setDistance?(0, lineDistance)
     }
     
