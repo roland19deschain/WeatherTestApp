@@ -17,6 +17,7 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SkyFloatingLabelTextField (3.8.0)
+  - SwiftValidator (4.0.0)
 
 DEPENDENCIES:
   - GoogleMaps
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.2.0`)
 
 SPEC REPOS:
   trunk:
@@ -35,6 +37,16 @@ SPEC REPOS:
     - RxSwift
     - SkyFloatingLabelTextField
 
+EXTERNAL SOURCES:
+  SwiftValidator:
+    :git: https://github.com/jpotts18/SwiftValidator.git
+    :tag: 4.2.0
+
+CHECKOUT OPTIONS:
+  SwiftValidator:
+    :git: https://github.com/jpotts18/SwiftValidator.git
+    :tag: 4.2.0
+
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
@@ -43,7 +55,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  SwiftValidator: 249b6b3ae3b294266c5b9de134d94f18f2d5aa47
 
-PODFILE CHECKSUM: 7f5744296db5a30f77cc46a813acf677dcee9865
+PODFILE CHECKSUM: 356ada542910a677082c7717ff659308ee7ce462
 
 COCOAPODS: 1.9.3
