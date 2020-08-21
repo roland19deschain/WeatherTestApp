@@ -17,8 +17,10 @@ final class MainView: UIView {
     private let disposeBag = DisposeBag()
     private let validator = Validator()
     var showWeather: ((String) -> Void)?
+    var handleError: ((String) -> Void)?
     
     // MARK: - Views
+    private var locationButton: UIButton!
     private lazy var textField: SkyFloatingLabelTextField = {
         let field = SkyFloatingLabelTextField()
         field.delegate = self
@@ -41,6 +43,7 @@ final class MainView: UIView {
         backgroundColor = .white
         showButton.isHidden = true
         validator.registerField(textField, errorLabel: showButton.titleLabel, rules: [RequiredRule(), ThreeSpaceRule(), MinLengthRule(length: 2)])
+        configureButton()
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -49,6 +52,29 @@ final class MainView: UIView {
     @objc private func textFieldHandleError(_ textField: SkyFloatingLabelTextField) {
         showButton.isHidden = false
         validator.validate(self)
+    }
+    
+    private func configureButton() {
+        LocationService.shared.result = { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let city):
+                let title = "Your location is \(city), what to show?"
+                self.locationButton = CustomButton(title: title, action: { self.showWeather?(city) })
+                self.setupLocationButton()
+            case .failure(let error): self.handleError?(error.rawValue)
+            }
+        }
+    }
+    
+    private func setupLocationButton() {
+        addSubview(locationButton)
+        locationButton.anchor(top: safeAreaLayoutGuide.topAnchor,
+                              leading: leadingAnchor,
+                              bottom: nil,
+                              trailing: trailingAnchor,
+                              padding: .init(top: 20, left: 30, bottom: 0, right: 30),
+                              size: .init(width: 0, height: 70))
     }
     
     // MARK: - Layout
