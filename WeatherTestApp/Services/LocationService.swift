@@ -14,7 +14,7 @@ final class LocationService: NSObject {
     enum LocationError: String, Error {
         case servicesDisabled = "Services disabled"
         case denied, restricted
-        case locality = "Can't get you're locality"
+        case locality = "Can't figure out you're current location"
     }
     
     // MARK: - Stored properties
