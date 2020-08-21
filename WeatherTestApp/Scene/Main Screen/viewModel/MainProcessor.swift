@@ -18,7 +18,7 @@ final class MainProcessor: MainProcessorProtocol {
         APIService
             .shared
             .rxResponse(by: Constants.urlString,
-                        parameters: ["q": city, "APPID": Constants.apiKey]) { (response: Observable<Weather>?, error) in
+                        parameters: [.q: city, .appid: Constants.apiKey]) { (response: Observable<Weather>?, error) in
                 if let error = error {
                     errorHandle(error)
                     return

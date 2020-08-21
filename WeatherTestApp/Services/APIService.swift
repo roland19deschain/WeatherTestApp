@@ -11,6 +11,7 @@ import RxSwift
 import RxAlamofire
 
 final class APIService {
+    // MARK: - Nested types
     enum NetworkError: String, Error {
         case redirection = "Redirects occurred"
         case client = "Check whether the input is correct"
@@ -18,12 +19,18 @@ final class APIService {
         case other = "Oops, something went wrong"
     }
     
+    enum Keys: String {
+        case q, appid, origin, destination, key
+    }
+    
+    // MARK: - Singleton
     static let shared = APIService()
     private init() {}
     
-    func rxResponse<T: Codable>(by urlString: String?, parameters: [String: Any],  _ completion: @escaping (Observable<T>?, NetworkError?) -> Void) {
+    // MARK: - Configure
+    func rxResponse<T: Codable>(by urlString: String?, parameters: [Keys: Any],  _ completion: @escaping (Observable<T>?, NetworkError?) -> Void) {
         guard let urlString = urlString, var components = URLComponents(string: urlString) else { return }
-        components.queryItems = parameters.map({ URLQueryItem(name: $0, value: "\($1)") })
+        components.queryItems = parameters.map({ URLQueryItem(name: $0.rawValue, value: "\($1)") })
         _ = response(.get, components.url!.absoluteString)
             .subscribe(onNext: { response in
                 

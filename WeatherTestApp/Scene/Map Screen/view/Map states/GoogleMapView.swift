@@ -49,9 +49,9 @@ final class GoogleMapView: UIView, MapStateProtocol {
     func addDirections(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
         APIService.shared.rxResponse(by: Constants.directionsApi,
                                      parameters: [
-                                        "origin": "\(source.latitude),\(source.longitude)",
-                                        "destination": "\(destination.latitude),\(destination.longitude)",
-                                        "key": Constants.googleApiKey
+                                        .origin: "\(source.latitude),\(source.longitude)",
+                                        .destination: "\(destination.latitude),\(destination.longitude)",
+                                        .key: Constants.googleApiKey
                                         ])
         { (observable: Observable<Direction>?, error) in
             observable?
