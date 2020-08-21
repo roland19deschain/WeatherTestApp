@@ -26,7 +26,7 @@ final class TempController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: Translate.back, style: .plain, target: nil, action: nil)
     }
 
     // MARK: - Load data

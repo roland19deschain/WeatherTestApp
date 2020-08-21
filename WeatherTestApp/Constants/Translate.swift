@@ -17,4 +17,5 @@ struct Translate {
     static let youreLocation = "You're location is "
     static let wantToShow = ". Want to show?"
     static let invalidateName = "Invalidate name"
+    static let back = "Back"
 }
