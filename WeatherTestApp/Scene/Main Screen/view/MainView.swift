@@ -24,7 +24,7 @@ final class MainView: UIView {
     private lazy var textField: SkyFloatingLabelTextField = {
         let field = SkyFloatingLabelTextField()
         field.delegate = self
-        field.placeholder = "City"
+        field.placeholder = Translate.city
         field.title = Translate.enterCity
         field.selectedTitleColor = .systemBlue
         field.lineColor = .systemBlue
@@ -59,15 +59,15 @@ final class MainView: UIView {
             guard let self = self else { return }
             switch result {
             case .success(let city):
-                let title = "Your location is \(city), what to show?"
+                let title = Translate.youreLocation + city + Translate.wantToShow
                 self.locationButton = CustomButton(title: title, action: { self.showWeather?(city) })
-                self.setupLocationButton()
+                self.layoutLocationButton()
             case .failure(let error): self.handleError?(error.rawValue)
             }
         }
     }
     
-    private func setupLocationButton() {
+    private func layoutLocationButton() {
         addSubview(locationButton)
         locationButton.anchor(top: safeAreaLayoutGuide.topAnchor,
                               leading: leadingAnchor,

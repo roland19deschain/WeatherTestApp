@@ -11,5 +11,5 @@ import SwiftValidator
 
 final class ThreeSpaceRule: Rule {
     func validate(_ value: String) -> Bool { value.prefix(3) != "   " }
-    func errorMessage() -> String { "Invalidate name" }
+    func errorMessage() -> String { Translate.invalidateName }
 }

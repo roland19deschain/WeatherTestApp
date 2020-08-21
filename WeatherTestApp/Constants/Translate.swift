@@ -13,4 +13,8 @@ struct Translate {
     static let error = "error"
     static let enterCity = "Enter city"
     static let showWeather = "Show weather"
+    static let city = "City"
+    static let youreLocation = "You're location is "
+    static let wantToShow = ". Want to show?"
+    static let invalidateName = "Invalidate name"
 }
