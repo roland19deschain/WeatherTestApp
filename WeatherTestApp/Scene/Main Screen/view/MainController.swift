@@ -30,6 +30,7 @@ final class MainController: UIViewController {
         view.showWeather = { city in
             self.main.loadTemp(city: city, errorHandle: { error in Alert.error(self, message: error.rawValue) })
         }
+        view.handleError = { error in Alert.error(self, message: error) }
     }
 
 }
