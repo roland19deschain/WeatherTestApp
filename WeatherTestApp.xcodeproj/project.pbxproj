@@ -31,6 +31,7 @@
 		CE710D6024DAFEF3007540AC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5F24DAFEF3007540AC /* Router.swift */; };
 		CE710D6224DAFF94007540AC /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D6124DAFF94007540AC /* Builder.swift */; };
 		CE7E054124ED6C9400B78C4D /* ThreeSpaceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */; };
+		CE90B3FA24EFABF600DCC0CC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B3F924EFABF600DCC0CC /* LocationService.swift */; };
 		CE9C79BC24E57FF700AD09BF /* MKAnnotations+MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */; };
 		CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */; };
 		CE9C79C024E5805800AD09BF /* CustomMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BF24E5805800AD09BF /* CustomMark.swift */; };
@@ -82,6 +83,7 @@
 		CE710D5F24DAFEF3007540AC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE710D6124DAFF94007540AC /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSpaceRule.swift; sourceTree = "<group>"; };
+		CE90B3F924EFABF600DCC0CC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+MapItem.swift"; sourceTree = "<group>"; };
 		CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+Identifier.swift"; sourceTree = "<group>"; };
 		CE9C79BF24E5805800AD09BF /* CustomMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMark.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4AA76D24DAD7EE00155AF3 /* APIService.swift */,
+				CE90B3F924EFABF600DCC0CC /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				CE710D5624DAF010007540AC /* MainView.swift in Sources */,
 				CEA9401824DBDACA001502D8 /* TempLoader-protocol.swift in Sources */,
 				CE4AA76824DACB7C00155AF3 /* MainController.swift in Sources */,
+				CE90B3FA24EFABF600DCC0CC /* LocationService.swift in Sources */,
 				CE4AA76E24DAD7EE00155AF3 /* APIService.swift in Sources */,
 				CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
