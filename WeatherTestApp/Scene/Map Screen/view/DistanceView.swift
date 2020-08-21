@@ -15,8 +15,8 @@ final class DistanceView: UIView {
         get { return (0, 0) }
         
         set {
-            routeDistanceLabel.text = "\(newValue.route) km"
-            lineDistanceLabel.text = "\(newValue.line) km"
+            routeDistanceLabel.text = "\(newValue.route) " + Translate.km
+            lineDistanceLabel.text = "\(newValue.line) " + Translate.km
             UIView.transition(with: self,
                               duration: 0.5,
                               options: .transitionFlipFromBottom,
@@ -37,8 +37,8 @@ final class DistanceView: UIView {
         isHidden = true
         backgroundColor = .white
         layer.cornerRadius = 20
-        routeLabel.text = "Route distance"
-        lineLabel.text = "Line distance"
+        routeLabel.text = Translate.routeDistance
+        lineLabel.text = Translate.lineDistance
     }
     
     required init?(coder: NSCoder) {

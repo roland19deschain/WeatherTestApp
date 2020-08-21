@@ -18,4 +18,7 @@ struct Translate {
     static let wantToShow = ". Want to show?"
     static let invalidateName = "Invalidate name"
     static let back = "Back"
+    static let km = "km"
+    static let routeDistance = "Route distance"
+    static let lineDistance = "Line distance"
 }
