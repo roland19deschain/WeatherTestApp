@@ -242,10 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				CECDE3E024EA7A5800C9A73A /* Google Direcrion */,
-				CE4AA77824DAED9500155AF3 /* Weather.swift */,
-				CE4AA77A24DAEDFD00155AF3 /* Description.swift */,
-				CE4AA77C24DAEE1600155AF3 /* Temp.swift */,
-				CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */,
+				CE90B40224F0044500DCC0CC /* API models */,
 				CEEEF9DA24DD78AA00DB1EC8 /* MapData.swift */,
 				CE66EFA024E6933300B5B8B0 /* WeatherResponse.swift */,
 			);
@@ -331,6 +328,17 @@
 				CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */,
 			);
 			path = "Map screen";
+			sourceTree = "<group>";
+		};
+		CE90B40224F0044500DCC0CC /* API models */ = {
+			isa = PBXGroup;
+			children = (
+				CE4AA77824DAED9500155AF3 /* Weather.swift */,
+				CE4AA77A24DAEDFD00155AF3 /* Description.swift */,
+				CE4AA77C24DAEE1600155AF3 /* Temp.swift */,
+				CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */,
+			);
+			path = "API models";
 			sourceTree = "<group>";
 		};
 		CEA9400A24DBD1C4001502D8 /* Protocols */ = {
