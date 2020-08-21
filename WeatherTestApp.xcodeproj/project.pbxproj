@@ -30,7 +30,6 @@
 		CE710D5E24DAFC83007540AC /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = CE710D5D24DAFC83007540AC /* readme.md */; };
 		CE710D6024DAFEF3007540AC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D5F24DAFEF3007540AC /* Router.swift */; };
 		CE710D6224DAFF94007540AC /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D6124DAFF94007540AC /* Builder.swift */; };
-		CE7E053F24ED6C8000B78C4D /* LineCountRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E053E24ED6C8000B78C4D /* LineCountRule.swift */; };
 		CE7E054124ED6C9400B78C4D /* ThreeSpaceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */; };
 		CE9C79BC24E57FF700AD09BF /* MKAnnotations+MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */; };
 		CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */; };
@@ -82,7 +81,6 @@
 		CE710D5D24DAFC83007540AC /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		CE710D5F24DAFEF3007540AC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE710D6124DAFF94007540AC /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		CE7E053E24ED6C8000B78C4D /* LineCountRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCountRule.swift; sourceTree = "<group>"; };
 		CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSpaceRule.swift; sourceTree = "<group>"; };
 		CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+MapItem.swift"; sourceTree = "<group>"; };
 		CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+Identifier.swift"; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 		CE7E053D24ED6C6F00B78C4D /* Rules */ = {
 			isa = PBXGroup;
 			children = (
-				CE7E053E24ED6C8000B78C4D /* LineCountRule.swift */,
 				CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */,
 			);
 			path = Rules;
@@ -507,7 +504,6 @@
 				CE4AA76824DACB7C00155AF3 /* MainController.swift in Sources */,
 				CE4AA76E24DAD7EE00155AF3 /* APIService.swift in Sources */,
 				CEA9401A24DBEB52001502D8 /* CustomButton.swift in Sources */,
-				CE7E053F24ED6C8000B78C4D /* LineCountRule.swift in Sources */,
 				CE4AA74D24DAC90E00155AF3 /* AppDelegate.swift in Sources */,
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
 				CE7E054124ED6C9400B78C4D /* ThreeSpaceRule.swift in Sources */,
