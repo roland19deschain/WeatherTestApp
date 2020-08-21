@@ -32,6 +32,8 @@
 		CE710D6224DAFF94007540AC /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE710D6124DAFF94007540AC /* Builder.swift */; };
 		CE7E054124ED6C9400B78C4D /* ThreeSpaceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */; };
 		CE90B3FA24EFABF600DCC0CC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B3F924EFABF600DCC0CC /* LocationService.swift */; };
+		CE90B3FE24F001FA00DCC0CC /* MapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B3FD24F001FA00DCC0CC /* MapHandler.swift */; };
+		CE90B40124F0021E00DCC0CC /* MapHandler-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */; };
 		CE9C79BC24E57FF700AD09BF /* MKAnnotations+MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */; };
 		CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */; };
 		CE9C79C024E5805800AD09BF /* CustomMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BF24E5805800AD09BF /* CustomMark.swift */; };
@@ -84,6 +86,8 @@
 		CE710D6124DAFF94007540AC /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		CE7E054024ED6C9400B78C4D /* ThreeSpaceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSpaceRule.swift; sourceTree = "<group>"; };
 		CE90B3F924EFABF600DCC0CC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		CE90B3FD24F001FA00DCC0CC /* MapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHandler.swift; sourceTree = "<group>"; };
+		CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapHandler-protocol.swift"; sourceTree = "<group>"; };
 		CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+MapItem.swift"; sourceTree = "<group>"; };
 		CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+Identifier.swift"; sourceTree = "<group>"; };
 		CE9C79BF24E5805800AD09BF /* CustomMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMark.swift; sourceTree = "<group>"; };
@@ -301,11 +305,40 @@
 			path = Rules;
 			sourceTree = "<group>";
 		};
+		CE90B3FB24F001DD00DCC0CC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9402124DBF806001502D8 /* MapController.swift */,
+				CEA9401F24DBF7D8001502D8 /* MapView.swift */,
+				CECDE3E724EAC87700C9A73A /* DistanceView.swift */,
+				CE9C79BF24E5805800AD09BF /* CustomMark.swift */,
+				CEA9402724DC03E7001502D8 /* Map states */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		CE90B3FC24F001F000DCC0CC /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE90B3FD24F001FA00DCC0CC /* MapHandler.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		CE90B3FF24F0020500DCC0CC /* Map screen */ = {
+			isa = PBXGroup;
+			children = (
+				CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */,
+			);
+			path = "Map screen";
+			sourceTree = "<group>";
+		};
 		CEA9400A24DBD1C4001502D8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				CEA9401324DBD99C001502D8 /* Main screen */,
 				CEA9401624DBDAB6001502D8 /* Temp screen */,
+				CE90B3FF24F0020500DCC0CC /* Map screen */,
 				CEA9401224DBD996001502D8 /* Helpers */,
 				CEA9402824DC2EF5001502D8 /* MapState-protocol.swift */,
 			);
@@ -356,11 +389,8 @@
 		CEA9401E24DBF661001502D8 /* Map Screen */ = {
 			isa = PBXGroup;
 			children = (
-				CEA9402124DBF806001502D8 /* MapController.swift */,
-				CEA9401F24DBF7D8001502D8 /* MapView.swift */,
-				CECDE3E724EAC87700C9A73A /* DistanceView.swift */,
-				CE9C79BF24E5805800AD09BF /* CustomMark.swift */,
-				CEA9402724DC03E7001502D8 /* Map states */,
+				CE90B3FC24F001F000DCC0CC /* viewModel */,
+				CE90B3FB24F001DD00DCC0CC /* view */,
 			);
 			path = "Map Screen";
 			sourceTree = "<group>";
@@ -519,6 +549,7 @@
 				CECDE3E624EA7A8900C9A73A /* OverviewPolyline.swift in Sources */,
 				CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */,
 				CEA9401524DBD9A9001502D8 /* MainProcessor-protocol.swift in Sources */,
+				CE90B3FE24F001FA00DCC0CC /* MapHandler.swift in Sources */,
 				CEA9402024DBF7D8001502D8 /* MapView.swift in Sources */,
 				CE710D6224DAFF94007540AC /* Builder.swift in Sources */,
 				CECDE3DF24EA60D700C9A73A /* MyNavigationController.swift in Sources */,
@@ -540,6 +571,7 @@
 				CE4AA77524DAEC4900155AF3 /* Constants.swift in Sources */,
 				CEEEF9DB24DD78AA00DB1EC8 /* MapData.swift in Sources */,
 				CEA9400C24DBD1DB001502D8 /* Builder-protocol.swift in Sources */,
+				CE90B40124F0021E00DCC0CC /* MapHandler-protocol.swift in Sources */,
 				CECDE3E224EA7A6900C9A73A /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
