@@ -24,8 +24,9 @@ final class Builder: BuilderProtocol {
     }
     
     static func mapView(mapData: MapData) -> UIViewController {
+        let mapHandler = MapHandler(mapData: mapData)
         let map = MapController()
-        map.mapData = mapData
+        map.mapHandler = mapHandler
         return map
     }
     
