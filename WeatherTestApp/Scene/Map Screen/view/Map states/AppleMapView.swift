@@ -79,7 +79,7 @@ final class AppleMapView: UIView, MapStateProtocol {
     @objc private func tapHandle(_ recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .changed, .ended:
-            if appleView.annotations.count > 1 {
+            if destination != nil {
                 appleView.removeAnnotation(destination)
                 appleView.removeOverlays(appleView.overlays)
             }
