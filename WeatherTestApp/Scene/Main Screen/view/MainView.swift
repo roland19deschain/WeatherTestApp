@@ -40,7 +40,7 @@ final class MainView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         showButton.isHidden = true
-        validator.registerField(textField, errorLabel: showButton.titleLabel, rules: [RequiredRule(), LineCountRule(), ThreeSpaceRule()])
+        validator.registerField(textField, errorLabel: showButton.titleLabel, rules: [RequiredRule(), ThreeSpaceRule(), MinLengthRule(length: 2)])
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
