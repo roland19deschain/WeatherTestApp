@@ -45,7 +45,7 @@ final class LocationService: NSObject {
     private func getLocality(from location: CLLocation) {
         geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            guard error != nil, let placemark = placemarks?.first else {
+            guard error == nil, let placemark = placemarks?.first else {
                 self.result?(.failure(.locality))
                 return
             }
