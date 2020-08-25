@@ -20,7 +20,14 @@ final class MainView: UIView {
     var handleError: ((String) -> Void)?
     
     // MARK: - Views
-    private var locationButton: UIButton!
+    private lazy var locationView: UITextView = {
+        let view = UITextView()
+        view.isEditable = false
+        view.isHidden = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapHandle(_:)))
+        view.addGestureRecognizer(gesture)
+        return view
+    }()
     private lazy var textField: SkyFloatingLabelTextField = {
         let field = SkyFloatingLabelTextField()
         field.delegate = self
@@ -59,29 +66,47 @@ final class MainView: UIView {
             guard let self = self else { return }
             switch result {
             case .success(let city):
-                let title = Translate.youreLocation + city + Translate.wantToShow
-                self.locationButton = CustomButton(title: title, action: { self.showWeather?(city) })
-                self.layoutLocationButton()
+                self.locationView.isHidden = false
+                self.addViewText(city)
             case .failure(let error): self.handleError?(error.rawValue)
             }
         }
     }
     
-    private func layoutLocationButton() {
-        addSubview(locationButton)
-        locationButton.anchor(top: safeAreaLayoutGuide.topAnchor,
-                              leading: leadingAnchor,
-                              bottom: nil,
-                              trailing: trailingAnchor,
-                              padding: .init(top: 20, left: 30, bottom: 0, right: 30),
-                              size: .init(width: 0, height: 70))
+    private func addViewText(_ city: String) {
+        let attrText = NSMutableAttributedString(string: Translate.youreLocation)
+        attrText.append(.init(string: city, attributes: [.underlineStyle: 1,
+                                                         .foregroundColor: UIColor.systemBlue]))
+        attrText.append(.init(string: Translate.wantToShow))
+        locationView.attributedText = attrText
+        locationView.font = .boldSystemFont(ofSize: 20)
+        locationView.textAlignment = .center
+    }
+    
+    @objc private func tapHandle(_ recognizer: UITapGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            var text = locationView.text
+            text!.removeFirst(Translate.youreLocation.count)
+            text!.removeLast(Translate.wantToShow.count)
+            showWeather?(text!)
+        default:
+            break
+        }
     }
     
     // MARK: - Layout
     override func layoutSubviews() {
         super.layoutSubviews()
+        addSubview(locationView)
         addSubview(textField)
         addSubview(showButton)
+        locationView.anchor(top: safeAreaLayoutGuide.topAnchor,
+                            leading: leadingAnchor,
+                            bottom: nil,
+                            trailing: trailingAnchor,
+                            padding: .init(top: 20, left: 30, bottom: 0, right: 30),
+                            size: .init(width: 0, height: 70))
         textField.centring(xAnchor: centerXAnchor, yAnchor: centerYAnchor)
         textField.anchor(top: nil,
                          leading: leadingAnchor,
