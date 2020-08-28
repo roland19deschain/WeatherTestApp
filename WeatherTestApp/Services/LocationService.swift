@@ -40,6 +40,7 @@ final class LocationService: NSObject {
         manager.delegate = self
         manager.desiredAccuracy = .greatestFiniteMagnitude
         manager.requestWhenInUseAuthorization()
+        manager.startMonitoringSignificantLocationChanges()
     }
     
     private func getLocality(from location: CLLocation) {
