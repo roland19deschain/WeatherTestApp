@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 target 'WeatherTestApp' do
-  source 'https://github.com/CocoaPods/Specs.git'
+  use_frameworks!
 
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
