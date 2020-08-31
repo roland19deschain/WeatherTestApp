@@ -43,6 +43,9 @@ final class MainView: UIView {
         self.textField.resignFirstResponder()
         self.showWeather?(self.textField.text ?? "")
     }
+    private lazy var showHistory = CustomButton(title: Translate.showHistory) { [weak self] in
+        guard let self = self else { return }
+    }
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -99,6 +102,7 @@ final class MainView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         addSubview(locationView)
+        addSubview(showHistory)
         addSubview(textField)
         addSubview(showButton)
         locationView.anchor(top: safeAreaLayoutGuide.topAnchor,
@@ -107,6 +111,11 @@ final class MainView: UIView {
                             trailing: trailingAnchor,
                             padding: .init(top: 20, left: 30, bottom: 0, right: 30),
                             size: .init(width: 0, height: 70))
+        showHistory.anchor(top: locationView.bottomAnchor,
+                           leading: locationView.leadingAnchor,
+                           bottom: nil,
+                           trailing: locationView.trailingAnchor,
+                           size: .init(width: 0, height: 70))
         textField.centring(xAnchor: centerXAnchor, yAnchor: centerYAnchor)
         textField.anchor(top: nil,
                          leading: leadingAnchor,
@@ -121,6 +130,8 @@ final class MainView: UIView {
                            padding: .init(top: 20, left: 0, bottom: 0, right: 0),
                            size: .init(width: 0, height: 50))
         
+        showHistory.layer.borderWidth = 1
+        showHistory.layer.cornerRadius = 10
     }
     
 }

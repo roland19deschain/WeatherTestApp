@@ -15,10 +15,11 @@ struct Translate {
     static let showWeather = "Show weather"
     static let city = "City"
     static let youreLocation = "You're location is "
-    static let wantToShow = ". Want to show?"
+    static let wantToShow = ". Want to show? \n Or"
     static let invalidateName = "Invalidate name"
     static let back = "Back"
     static let km = "km"
     static let routeDistance = "Route distance"
     static let lineDistance = "Line distance"
+    static let showHistory = "Show history"
 }
