@@ -34,6 +34,7 @@
 		CE90B3FA24EFABF600DCC0CC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B3F924EFABF600DCC0CC /* LocationService.swift */; };
 		CE90B3FE24F001FA00DCC0CC /* MapHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B3FD24F001FA00DCC0CC /* MapHandler.swift */; };
 		CE90B40124F0021E00DCC0CC /* MapHandler-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */; };
+		CE91543024FCC02A00B58FF3 /* WeatherModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE91542E24FCC02A00B58FF3 /* WeatherModel.xcdatamodeld */; };
 		CE9C79BC24E57FF700AD09BF /* MKAnnotations+MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */; };
 		CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */; };
 		CE9C79C024E5805800AD09BF /* CustomMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BF24E5805800AD09BF /* CustomMark.swift */; };
@@ -88,6 +89,7 @@
 		CE90B3F924EFABF600DCC0CC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		CE90B3FD24F001FA00DCC0CC /* MapHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHandler.swift; sourceTree = "<group>"; };
 		CE90B40024F0021E00DCC0CC /* MapHandler-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapHandler-protocol.swift"; sourceTree = "<group>"; };
+		CE91542F24FCC02A00B58FF3 /* WeatherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherModel.xcdatamodel; sourceTree = "<group>"; };
 		CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+MapItem.swift"; sourceTree = "<group>"; };
 		CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+Identifier.swift"; sourceTree = "<group>"; };
 		CE9C79BF24E5805800AD09BF /* CustomMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMark.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		CE4AA76F24DAEBFC00155AF3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE91542D24FCBFFF00B58FF3 /* Database */,
 				CE4AA76D24DAD7EE00155AF3 /* APIService.swift */,
 				CE90B3F924EFABF600DCC0CC /* LocationService.swift */,
 			);
@@ -339,6 +342,14 @@
 				CEEEF9D824DD72FC00DB1EC8 /* Coord.swift */,
 			);
 			path = "API models";
+			sourceTree = "<group>";
+		};
+		CE91542D24FCBFFF00B58FF3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CE91542E24FCC02A00B58FF3 /* WeatherModel.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		CEA9400A24DBD1C4001502D8 /* Protocols */ = {
@@ -552,6 +563,7 @@
 				CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */,
 				CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */,
 				CE710D5824DAF67B007540AC /* TempHandler.swift in Sources */,
+				CE91543024FCC02A00B58FF3 /* WeatherModel.xcdatamodeld in Sources */,
 				CEA9400E24DBD210001502D8 /* Router-protocol.swift in Sources */,
 				CE9C79C024E5805800AD09BF /* CustomMark.swift in Sources */,
 				CECDE3E624EA7A8900C9A73A /* OverviewPolyline.swift in Sources */,
@@ -772,6 +784,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE91542E24FCC02A00B58FF3 /* WeatherModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE91542F24FCC02A00B58FF3 /* WeatherModel.xcdatamodel */,
+			);
+			currentVersion = CE91542F24FCC02A00B58FF3 /* WeatherModel.xcdatamodel */;
+			path = WeatherModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE4AA74124DAC90E00155AF3 /* Project object */;
 }
