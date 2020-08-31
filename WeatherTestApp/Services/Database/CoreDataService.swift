@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-final class CoreDataService<MappedObject: MappedObjectProtocol>: DatabaseServiceProtocol where MappedObject.Object: ObjectProtocol {
+final class CoreDataService<MappedObject: MappedObjectProtocol>: DatabaseServiceProtocol where MappedObject.Object: ManagedObjectProtocol {
     func fetch(with predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]) -> [MappedObject] {
         let request = NSFetchRequest<MappedObject.Object>(entityName: String(describing: MappedObject.Object.self))
         request.predicate = predicate

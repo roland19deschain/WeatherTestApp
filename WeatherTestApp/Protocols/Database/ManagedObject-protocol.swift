@@ -1,5 +1,5 @@
 //
-//  Object-protocol.swift
+//  ManagedObject-protocol.swift
 //  WeatherTestApp
 //
 //  Created by User on 8/31/20.
@@ -9,6 +9,6 @@
 import Foundation
 import CoreData
 
-protocol ObjectProtocol: NSManagedObject {
+protocol ManagedObjectProtocol: NSManagedObject {
     func toMappedObject<T: MappedObjectProtocol>() -> T?
 }

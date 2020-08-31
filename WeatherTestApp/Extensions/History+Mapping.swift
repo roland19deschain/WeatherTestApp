@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension History: ObjectProtocol {
+extension History: ManagedObjectProtocol {
     func toMappedObject<T>() -> T? where T : MappedObjectProtocol {
         CDHistory(date: date!,
                   city: city ?? "",

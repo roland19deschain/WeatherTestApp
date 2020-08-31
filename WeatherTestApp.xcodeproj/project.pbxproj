@@ -39,7 +39,7 @@
 		CE9154AC24FCE99800B58FF3 /* DatabaseService-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154A724FCE99700B58FF3 /* DatabaseService-protocol.swift */; };
 		CE9154AD24FCE99800B58FF3 /* MappedObject-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154A824FCE99700B58FF3 /* MappedObject-protocol.swift */; };
 		CE9154AE24FCE99800B58FF3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154A924FCE99700B58FF3 /* CoreDataService.swift */; };
-		CE9154B024FCEDA200B58FF3 /* Object-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154AF24FCEDA200B58FF3 /* Object-protocol.swift */; };
+		CE9154B024FCEDA200B58FF3 /* ManagedObject-protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154AF24FCEDA200B58FF3 /* ManagedObject-protocol.swift */; };
 		CE9154B224FCEDBE00B58FF3 /* History+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9154B124FCEDBE00B58FF3 /* History+Mapping.swift */; };
 		CE9C79BC24E57FF700AD09BF /* MKAnnotations+MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */; };
 		CE9C79BE24E5802F00AD09BF /* MKAnnotations+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */; };
@@ -100,7 +100,7 @@
 		CE9154A724FCE99700B58FF3 /* DatabaseService-protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseService-protocol.swift"; sourceTree = "<group>"; };
 		CE9154A824FCE99700B58FF3 /* MappedObject-protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MappedObject-protocol.swift"; sourceTree = "<group>"; };
 		CE9154A924FCE99700B58FF3 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		CE9154AF24FCEDA200B58FF3 /* Object-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object-protocol.swift"; sourceTree = "<group>"; };
+		CE9154AF24FCEDA200B58FF3 /* ManagedObject-protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedObject-protocol.swift"; sourceTree = "<group>"; };
 		CE9154B124FCEDBE00B58FF3 /* History+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+Mapping.swift"; sourceTree = "<group>"; };
 		CE9C79BB24E57FF700AD09BF /* MKAnnotations+MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+MapItem.swift"; sourceTree = "<group>"; };
 		CE9C79BD24E5802F00AD09BF /* MKAnnotations+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKAnnotations+Identifier.swift"; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 			children = (
 				CE9154A724FCE99700B58FF3 /* DatabaseService-protocol.swift */,
 				CE9154A824FCE99700B58FF3 /* MappedObject-protocol.swift */,
-				CE9154AF24FCEDA200B58FF3 /* Object-protocol.swift */,
+				CE9154AF24FCEDA200B58FF3 /* ManagedObject-protocol.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 				CE4AA77924DAED9500155AF3 /* Weather.swift in Sources */,
 				CE7E054124ED6C9400B78C4D /* ThreeSpaceRule.swift in Sources */,
 				CEEEF9D924DD72FC00DB1EC8 /* Coord.swift in Sources */,
-				CE9154B024FCEDA200B58FF3 /* Object-protocol.swift in Sources */,
+				CE9154B024FCEDA200B58FF3 /* ManagedObject-protocol.swift in Sources */,
 				CEA9402624DC0359001502D8 /* GoogleMapView.swift in Sources */,
 				CE710D5824DAF67B007540AC /* TempHandler.swift in Sources */,
 				CE91543024FCC02A00B58FF3 /* WeatherModel.xcdatamodeld in Sources */,
